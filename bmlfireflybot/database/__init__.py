@@ -1,6 +1,6 @@
 import pymongo
 
-from pyroskeletonbot import MONGO_URL, DB_USERNAME, DB_PASSWORD, DB_NAME
+from bmlfireflybot import MONGO_URL, DB_USERNAME, DB_PASSWORD, DB_NAME
 
 
 def database():

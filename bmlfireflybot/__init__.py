@@ -7,7 +7,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-from pyroskeletonbot.pyroskeletonbot import PyroSkeletonBot
+from bmlfireflybot.bmlfireflybot import BmlFireflyBot
 
 # Created logs folder if it is not there. Needed for logging.
 if not os.path.exists('logs'):
@@ -19,7 +19,7 @@ logging.basicConfig(
     datefmt='%Y/%m/%d %I:%M:%S %p',
     level=logging.WARNING,
     handlers=[
-        TimedRotatingFileHandler(f"logs/{PyroSkeletonBot.__name__.lower()}.log", when="midnight", encoding=None,
+        TimedRotatingFileHandler(f"logs/{BmlFireflyBot.__name__.lower()}.log", when="midnight", encoding=None,
                                  delay=False, backupCount=10),
         logging.StreamHandler()
     ]
@@ -29,10 +29,10 @@ LOGS = logging.getLogger(__name__)
 __version__ = '1.0.0'
 __author__ = 'athphane'
 
-PyroSkeletonBot = PyroSkeletonBot(__version__)
+BmlFireflyBot = BmlFireflyBot(__version__)
 
 # Read from config file
-name = str(PyroSkeletonBot).lower()
+name = str(BmlFireflyBot).lower()
 config_file = f"{name}.ini"
 config = ConfigParser()
 config.read(config_file)

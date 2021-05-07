@@ -1,18 +1,18 @@
 from pyrogram.types import Message, InlineQuery
 
-from pyroskeletonbot import PyroSkeletonBot
-from pyroskeletonbot.database.users import UserDB
-from pyroskeletonbot.utils import custom_filters
+from bmlfireflybot import BmlFireflyBot
+from bmlfireflybot.database.users import UserDB
+from bmlfireflybot.utils import custom_filters
 
 
-@PyroSkeletonBot.on_message(~custom_filters.group & custom_filters.private, group=-10)
-async def creates_the_user(bot: PyroSkeletonBot, message: Message):
+@BmlFireflyBot.on_message(~custom_filters.group & custom_filters.private, group=-10)
+async def creates_the_user(bot: BmlFireflyBot, message: Message):
     user = UserDB().find_user(message.from_user)
     if user is None:
         UserDB().find_or_create(message.from_user)
         if message.from_user.last_name and message.from_user.username:
             full_message = (
-                f"**A new user has started using {str(PyroSkeletonBot)}**\n"
+                f"**A new user has started using {str(BmlFireflyBot)}**\n"
                 "UserID: __[{user_id}](tg://user?id={user_id})__\n"
                 "First Name: __{first_name}__\n"
                 "Last Name: __{last_name}__\n"
@@ -30,7 +30,7 @@ async def creates_the_user(bot: PyroSkeletonBot, message: Message):
 
         elif message.from_user.username:
             username_message = (
-                f"**A new user has started using {str(PyroSkeletonBot)}**\n"
+                f"**A new user has started using {str(BmlFireflyBot)}**\n"
                 "UserID: __[{user_id}](tg://user?id={user_id})__\n"
                 "First Name: __{first_name}__\n"
                 "Username: @{username}"
@@ -46,7 +46,7 @@ async def creates_the_user(bot: PyroSkeletonBot, message: Message):
 
         else:
             f_name_message = (
-                f"**A new user has started using {str(PyroSkeletonBot)}**\n"
+                f"**A new user has started using {str(BmlFireflyBot)}**\n"
                 "UserID: __[{user_id}](tg://user?id={user_id})__\n"
                 "First Name: __{first_name}__"
             )
@@ -62,7 +62,7 @@ async def creates_the_user(bot: PyroSkeletonBot, message: Message):
     message.continue_propagation()
 
 
-@PyroSkeletonBot.on_inline_query(group=9)
+@BmlFireflyBot.on_inline_query(group=9)
 async def callback_user_updating(_, inline_query: InlineQuery):
     user = UserDB().find_user(inline_query.from_user)
     if user:

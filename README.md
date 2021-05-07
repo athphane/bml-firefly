@@ -24,16 +24,18 @@ python -m pyroskeleton
 ```
 
 ## Developing
-To add extra modules to the bot, simply add the code into [pyroskeletonbot/plugins](pyroskeletonbot/plugins). Each file
+To add extra modules to the bot, simply add the code into [pyroskeletonbot/plugins](bmlfireflybot/plugins). Each file
 that is added to the 'plugins' directory should have the following code at a minimum.
+
 ```python
 from pyrogram.types import Message
-from pyroskeletonbot.utils import custom_filters
+from bmlfireflybot.utils import custom_filters
 
-from pyroskeletonbot import PyroSkeletonBot
+from bmlfireflybot import BmlFireflyBot
 
-@PyroSkeletonBot.on_message(custom_filters.command('sample', ['.']))
-async def module_name(bot: PyroSkeletonBot, message: Message):
+
+@BmlFireflyBot.on_message(custom_filters.command('sample', ['.']))
+async def module_name(bot: BmlFireflyBot, message: Message):
     await message.edit("This is a sample module")
 ```
 

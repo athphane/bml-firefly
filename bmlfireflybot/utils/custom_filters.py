@@ -3,8 +3,8 @@ import shlex
 from pyrogram.filters import *
 from pyrogram.types import Message
 
-from pyroskeletonbot import BOT_USERNAME
-from pyroskeletonbot.database.users import UserDB
+from bmlfireflybot import BOT_USERNAME
+from bmlfireflybot.database.users import UserDB
 
 
 def command(commands: str or List[str], prefixes: str or List[str] = "/", case_sensitive: bool = False):

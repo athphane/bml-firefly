@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pyrogram.types import User as BaseUser
 
-from pyroskeletonbot.database import database
+from bmlfireflybot.database import database
 
 
 class UserDB:

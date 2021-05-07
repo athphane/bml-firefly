@@ -4,7 +4,7 @@ venv/
 *.session
 *.session-journal
 __pycache__/
-pyroskeletonbot.ini
+bmlfireflybot.ini
 unknown_errors.txt
 *.log*
 database.py

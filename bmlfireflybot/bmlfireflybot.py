@@ -11,7 +11,7 @@ from pyrogram.raw.all import layer
 from pyrogram.types import Message, CallbackQuery
 
 
-class PyroSkeletonBot(Client):
+class BmlFireflyBot(Client):
     def __init__(self, version='0.0.0'):
         self.version = version
         self.name = name = self.__class__.__name__.lower()
@@ -55,7 +55,7 @@ class PyroSkeletonBot(Client):
 
     async def restart(self, git_update=False, pip=False, *args):
         """
-        Restart the bot for reals.
+        Restart the bmlfireflybot for reals.
         :return:
         """
         await self.stop()
@@ -89,7 +89,7 @@ class PyroSkeletonBot(Client):
     def admins_only(func):
         """ Function decorator to only allow admins"""
         @wraps(func)
-        async def decorator(bot: PyroSkeletonBot, message: Message):
+        async def decorator(bot: BmlFireflyBot, message: Message):
             if bot.is_admin(message):
                 await func(bot, message)
 
