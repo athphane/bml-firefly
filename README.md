@@ -1,6 +1,8 @@
 > This project is in no way associated with Bank of Maldives (hereafter referred to as BML).
 > Use this project at your own risk. The author claims no responsibility on what may happen to a user's 
 > bank account from the usage of this project. 
+> 
+> This project uses a BML API wrapper called aiobml to make API calls.
 ---
 # BML Firefly Integration Bot
 A Telegram Bot based on [Pyrogram](https://github.com/pyrogram/pyrogram) to help auto add transactions to a 
