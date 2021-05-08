@@ -5,6 +5,7 @@ import sys
 from configparser import ConfigParser
 from logging.handlers import TimedRotatingFileHandler
 
+from aiobml import asyncBML
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from bmlfireflybot.bmlfireflybot import BmlFireflyBot
@@ -52,7 +53,14 @@ DB_NAME = config.get('mongo', 'db_name')
 DB_USERNAME = config.get('mongo', 'db_username')
 DB_PASSWORD = config.get('mongo', 'db_password')
 
+BML_USERNAME = config.get('bml', 'username')
+BML_PASSWORD = config.get('bml', 'password')
+
+FIREFLY_TOKEN = config.get('firefly', 'token')
+
 # Global Variables
 client = None
 
 scheduler = AsyncIOScheduler()
+
+bank = asyncBML(username=BML_USERNAME, password=BML_PASSWORD)

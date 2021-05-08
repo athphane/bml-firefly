@@ -13,3 +13,10 @@ url = localhost
 db_name = db-name
 db_username = db-username
 db_password = db-password
+
+[bml]
+username =
+password =
+
+[firefly]
+token =
